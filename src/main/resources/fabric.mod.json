@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "nebula_limbo",
+  "version": "${version}",
+  "name": "Nebula Limbo Rebirth",
+  "description": "100% Video-Accurate Death -> Collapse & 2x Blink -> Custom Nebula Sky Dimension (BossBar Countdown) -> F5-Locked 3rd-Person Real-Player Orbit Cinematic & Fullscreen White Flash Rebirth for Minecraft 26.3.",
+  "authors": [
+    "NebulaLimboDev"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.nebulalimbo.NebulaLimboMod"
+    ],
+    "client": [
+      "net.nebulalimbo.client.NebulaLimboClient"
+    ]
+  },
+  "mixins": [
+    "nebula_limbo.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

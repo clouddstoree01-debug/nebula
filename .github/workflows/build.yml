@@ -1,0 +1,32 @@
+name: Build Minecraft 26.3 Jar
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 25 (Eclipse Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '25'
+
+      - name: Setup Gradle 9.6.0
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.6.0'
+
+      - name: Build JAR
+        run: gradle build --no-daemon
+
+      - name: Upload Compiled JAR Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NebulaLimbo-26.3-JAR
+          path: build/libs/*.jar
